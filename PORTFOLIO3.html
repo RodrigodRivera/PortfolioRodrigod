@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigo Rivera Rodríguez - Portafolio de Ilustración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Paleta de colores más clara para toda la web
+                        primary: '#FF9980', // Un tono más suave de rojo-naranja
+                        secondary: '#87CEFA', // Un azul cielo claro
+                        accent: '#FFFACD', // Un amarillo pastel
+                        bodyBg: '#FFFFF0', // Ivory - un blanco muy suave para el fondo general del cuerpo
+
+                        // Colores para secciones y tarjetas específicas
+                        sectionBgGeneral: '#FFC0CB', // Pink - Ahora coincide con el color final del Hero
+                        profileCardBg: '#E0FFFF', // LightCyan - un cian muy claro para las tarjetas de perfil
+                        
+                        // Colores específicos de la sección Hero
+                        heroBgStart: '#FFB6C1', // LightPink
+                        heroBgEnd: '#FFC0CB',   // Pink
+                        whoAmIBoxBg: '#98FB98', // PaleGreen
+                        exploreWorksBoxBg: '#FFDAB9', // PeachPuff
+
+                        // Colores específicos de la sección Portafolio (fondo de la sección)
+                        portfolioSectionBg: '#FFC0CB', // Pink - Ahora coincide con el color final del Hero
+
+                        // Colores para el área de la imagen dentro de las tarjetas
+                        artworkImageArea: '#B0E0E6', // PowderBlue - un azul pálido para el área de la imagen
+
+                        // Colores temáticos y saturados para las bases de las tarjetas de obra
+                        supermanCardBg: '#FF6347',    // Tomato - Rojo vibrante para Superman
+                        dcEverydayCardBg: '#4682B4',  // SteelBlue - Azul vibrante para DC Cotidiana
+                        absoluteCardBg: '#3CB371',    // MediumSeaGreen - Verde vibrante para Absoluta
+                        
+                        // Colores variados y saturados para Obras Puntuales
+                        spotlightCard1: '#FF69B4',    // HotPink - Rosa vibrante
+                        spotlightCard2: '#BA55D3',    // MediumOrchid - Púrpura vibrante
+                        spotlightCard3: '#FF4500',    // OrangeRed - Naranja-Rojo vibrante
+                        spotlightCard4: '#FF8C00',    // DarkOrange - Naranja vibrante
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para asegurar que la fuente Inter se aplique a todo el cuerpo */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Estilo para el spinner de carga (aunque ya no se usará, se mantiene por si acaso) */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #FF9980; /* Actualizado al nuevo color primary */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Clase para deshabilitar el scroll del body cuando el modal está abierto */
+        .no-scroll {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-bodyBg text-gray-800 font-inter leading-relaxed">
+
+    <!-- Sección de Cabecera (Header) - Transparente y sobre el Hero -->
+    <header class="absolute top-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center bg-transparent">
+        <div class="text-2xl font-bold text-gray-900"> <!-- Texto del título en un gris oscuro para contraste -->
+            <a href="#" class="hover:text-primary transition-colors duration-300">PORTFOLIO</a>
+        </div>
+        <!-- Navegación principal -->
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#sobre-mi" class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Sobre Mí</a></li>
+                <li><a href="#servicios-creativos" class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Servicios</a></li>
+                <li><a href="#habilidades-artisticas" class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Habilidades</a></li>
+                <li><a href="#trayectoria-academica" class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Formación</a></li>
+                <li><a href="#portafolio" class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Portafolio</a></li>
+                <li><a href="#contacto" class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor principal de contenido -->
+    <main class="container mx-auto px-6 md:px-12 py-12">
+
+        <!-- Sección Hero / Introducción - Con imagen de fondo y superposición de gradiente -->
+        <section id="hero" class="relative text-center py-20 rounded-xl shadow-lg mb-16 overflow-hidden"
+            style="background-image: url('https://placehold.co/1920x1080/E0BBE4/957DAD?text=Sunset+Palm+Trees'); background-size: cover; background-position: center;">
+            <!-- Superposición de gradiente para mejorar la legibilidad del texto -->
+            <div class="absolute inset-0 bg-gradient-to-r from-heroBgStart to-heroBgEnd opacity-80"></div>
+
+            <div class="relative z-10"> <!-- Contenido del Hero sobre la superposición -->
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                    Rodrigo Rivera Rodríguez
+                </h1>
+                <p class="text-2xl md:text-3xl text-white font-semibold mb-8">
+                    Ilustrador | Artista Visual | Creador de Cómics
+                </p>
+                <p class="text-lg text-white max-w-3xl mx-auto mb-10">
+                    Dando vida a historias y conceptos a través del arte.
+                </p>
+                <!-- Nuevos elementos: Cuadro de contexto y índice de series -->
+                <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 max-w-4xl mx-auto">
+                    <!-- Cuadro de Contexto "Quién Soy" -->
+                    <div class="bg-whoAmIBoxBg p-6 rounded-lg shadow-md flex-1 text-left flex flex-col justify-between text-gray-800"> <!-- Texto oscuro para contraste -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3">¿Quién soy?</h3>
+                            <p class="text-lg leading-relaxed">
+                                Desde mi infancia, el universo del cómic ha sido mi motor creativo. Más allá de las historias, me fascinaba el <strong class="text-primary">concepto de la narrativa visual</strong>, una chispa que encendió mi pasión incluso antes de sumergirme en las grandes obras del género.
+                            </p>
+                        </div>
+                        <a href="#sobre-mi" class="mt-4 bg-primary text-white px-6 py-3 rounded-full text-md font-bold hover:bg-red-400 transition-all duration-300 transform hover:scale-105 shadow-lg inline-block self-start">
+                            Saber más sobre mí
+                        </a>
+                    </div>
+                    <!-- Pequeño Índice de Obras -->
+                    <div class="bg-exploreWorksBoxBg p-6 rounded-lg shadow-md flex-1 text-left text-gray-800"> <!-- Texto oscuro para contraste -->
+                        <h3 class="text-2xl font-bold mb-3">Explora mis obras</h3>
+                        <ul class="list-disc list-inside space-y-2 text-lg">
+                            <li><a href="#serie-el-hombre-de-acero" class="text-primary hover:underline font-semibold">Serie: El Hombre de Acero</a></li>
+                            <li><a href="#serie-dc-cotidiana" class="text-primary hover:underline font-semibold">Serie: DC Cotidiana</a></li>
+                            <li><a href="#serie-absoluta" class="text-primary hover:underline font-semibold">Serie: Absoluta</a></li>
+                            <li><a href="#obras-puntuales" class="text-primary hover:underline font-semibold">Obras Puntuales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí - Actualizada con nuevos colores -->
+        <section id="sobre-mi" class="bg-sectionBgGeneral p-8 md:p-12 rounded-xl shadow-lg mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center border-b-2 border-primary pb-4">
+                🎨 Sobre Mí: La Esencia de la Creación
+            </h2>
+            <div class="flex flex-col items-center gap-8 max-w-3xl mx-auto">
+                <div class="flex justify-center">
+                    <img src="https://placehold.co/400x400/E0FFFF/FF9980?text=Tu+Imagen" alt="Imagen de perfil de Rodrigo Rivera Rodríguez" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-4 border-primary">
+                </div>
+                <div class="text-center">
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Desde mi infancia, el universo del cómic ha sido mi motor creativo. Más allá de las historias, me fascinaba el <strong class="text-primary">concepto de la narrativa visual</strong>, una chispa que encendió mi pasión incluso antes de sumergirme en las grandes obras del género. Al descubrir los cómics en su plenitud, mi amor por este medio se transformó en una vocación inquebrantable.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Me defino por mi <strong class="text-primary">versatilidad y mi insaciable curiosidad</strong>. Cada proyecto es una oportunidad para innovar y superar mis propios límites. He transitado con éxito por diversos campos, desde la ilustración aplicada al marketing hasta la creación de piezas artísticas puras. Mi filosofía es clara: no existen barreras creativas. Si un proyecto representa un reto, lo abrazo con entusiasmo, buscando siempre la excelencia y la originalidad.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección "Mi Perfil Profesional" completamente rediseñada y actualizada con nuevos colores -->
+        <section id="mi-enfoque-artistico" class="bg-sectionBgGeneral p-8 md:p-12 rounded-xl shadow-lg mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center border-b-2 border-primary pb-4">
+                Mi Enfoque Artístico
+            </h2>
+
+            <!-- Servicios Creativos -->
+            <div id="servicios-creativos" class="bg-profileCardBg p-6 rounded-lg shadow-md max-w-2xl mx-auto mb-8">
+                <p class="text-5xl mb-4 text-primary text-center">🌟</p>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Servicios Creativos</h3>
+                <ul class="list-none text-gray-700 text-lg space-y-2 text-center">
+                    <li>Ilustración Editorial/Comercial</li>
+                    <li>Ilustración Artística/Personalizada</li>
+                    <li>Diseño/Creación de Cómics</li>
+                    <li>Talla Artística en Madera</li>
+                </ul>
+            </div>
+            <hr class="border-t-2 border-primary my-8 max-w-2xl mx-auto">
+
+            <!-- Habilidades Artísticas -->
+            <div id="habilidades-artisticas" class="bg-profileCardBg p-6 rounded-lg shadow-md max-w-2xl mx-auto mb-8">
+                <p class="text-5xl mb-4 text-primary text-center">🛠️</p>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Habilidades Artísticas</h3>
+                <ul class="list-none text-gray-700 text-lg space-y-2 text-center">
+                    <li>Dominio de Técnicas de Ilustración (Tradicional/Digital)</li>
+                    <li>Narrativa Visual</li>
+                    <li>Diseño de Personajes y Escenarios</li>
+                    <li>Creatividad y Resolución de Problemas</li>
+                    <li>Versatilidad y Adaptabilidad</li>
+                </ul>
+            </div>
+            <hr class="border-t-2 border-primary my-8 max-w-2xl mx-auto">
+
+            <!-- Mi Trayectoria Académica -->
+            <div id="trayectoria-academica" class="bg-profileCardBg p-6 rounded-lg shadow-md max-w-2xl mx-auto mb-8">
+                <p class="text-5xl mb-4 text-primary text-center">🎓</p>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Mi Trayectoria Académica</h3>
+                <ul class="list-none text-gray-700 text-lg space-y-2 text-center">
+                    <li>Técnico Superior de Ilustración</li>
+                    <li>Técnico en Talla Artística en Madera</li>
+                    <li>Curso de Creación de Cómic (Universidad de Huelva)</li>
+                </ul>
+            </div>
+            <hr class="border-t-2 border-primary my-8 max-w-2xl mx-auto">
+
+            <!-- Mi Filosofía Artística -->
+            <div id="filosofia-artistica" class="bg-profileCardBg p-6 rounded-lg shadow-md max-w-2xl mx-auto">
+                <p class="text-5xl mb-4 text-primary text-center">💖</p>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Mi Filosofía Artística</h3>
+                <p class="text-lg text-gray-700 leading-relaxed text-center">
+                    Mi aspiración es que mi obra no solo sea reconocida, sino que resuene profundamente y **llegue al corazón de cada espectador**. Busco crear arte que emocione, inspire y deje una huella duradera.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección Portafolio - Mantiene el diseño y colores anteriores que ya eran vibrantes -->
+        <section id="portafolio" class="bg-portfolioSectionBg p-8 md:p-12 rounded-xl shadow-lg mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center border-b-2 border-primary pb-4">
+                ✨ Mi Obra: Galería de Ilustraciones
+            </h2>
+            <p class="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
+                Explora mis creaciones, organizadas por series y obras puntuales, que reflejan mi pasión por la ilustración y el cómic.
+            </p>
+
+            <div id="serie-el-hombre-de-acero" class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">
+                    Serie: El Hombre de Acero
+                </h3>
+                <p class="text-lg text-gray-700 mb-6">
+                    Esta serie explora las facetas de Superman: poder icónico, humanidad y reinterpretaciones clásicas.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Obra 1: Superman: La Esperanza Inquebrantable -->
+                    <div id="artwork-superman-esperanza" class="bg-supermanCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Superman+Esperanza+GRANDE"
+                         data-description="Superman original emerge de pared rota, simbolizando esperanza inquebrantable.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Superman: La Esperanza Inquebrantable" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Superman: La Esperanza Inquebrantable</h4>
+                            <p class="text-gray-900 text-sm" id="desc-superman-esperanza">Superman original emerge de pared rota, simbolizando esperanza inquebrantable.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 2: Superman: Rescate Clásico -->
+                    <div id="artwork-superman-rescate" class="bg-supermanCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Superman+Rescate+GRANDE"
+                         data-description="Reinterpretación de portada icónica: Superman clásico levanta coche verde para rescatar, mostrando fuerza y compasión.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Superman: Rescate Clásico" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Superman: Rescate Clásico</h4>
+                            <p class="text-gray-900 text-sm" id="desc-superman-rescate">Reinterpretación de portada icónica: Superman clásico levanta coche verde para rescatar, mostrando fuerza y compasión.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 3: Superman: Placeres Mundanos -->
+                    <div id="artwork-superman-placeres" class="bg-supermanCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Superman+Helado+GRANDE"
+                         data-description="Superman actual disfruta helado (vainilla/chocolate), resaltando su goce de placeres cotidianos.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Superman: Placeres Mundanos" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Superman: Placeres Mundanos</h4>
+                            <p class="text-gray-900 text-sm" id="desc-superman-placeres">Superman actual disfruta helado (vainilla/chocolate), resaltando su goce de placeres cotidianos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="serie-dc-cotidiana" class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">
+                    Serie: DC Cotidiana
+                </h3>
+                <p class="text-lg text-gray-700 mb-6">
+                    Esta serie humaniza héroes DC, explorándolos en situaciones cotidianas humorísticas.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Obra 1: Nightwing: Batalla por las Sábanas -->
+                    <div id="artwork-nightwing-sabanas" class="bg-dcEverydayCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Nightwing+Sabanas+GRANDE"
+                         data-description="Dick Grayson pelea con su perra por las sábanas, un momento cómico y personal.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Nightwing: Batalla por las Sábanas" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Nightwing: Batalla por las Sábanas</h4>
+                            <p class="text-gray-900 text-sm" id="desc-nightwing-sabanas">Dick Grayson pelea con su perra por las sábanas, un momento cómico y personal.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 2: Flash: La Parada Más Rápida -->
+                    <div id="artwork-flash-parada" class="bg-dcEverydayCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Flash+Parada+GRANDE"
+                         data-description="Flash (Barry Allen) irónicamente espera el autobús, contrastando su velocidad con la rutina.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Flash: La Parada Más Rápida" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Flash: La Parada Más Rápida</h4>
+                            <p class="text-gray-900 text-sm" id="desc-flash-parada">Flash (Barry Allen) irónicamente espera el autobús, contrastando su velocidad con la rutina.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="serie-absoluta" class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">
+                    Serie: Absoluta
+                </h3>
+                <p class="text-lg text-gray-700 mb-6">
+                    Esta serie presenta personajes DC en versiones "absolutas", con enfoque grandioso y simbólico.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Obra 1: Detective Marciano -->
+                    <div id="artwork-detective-marciano" class="bg-absoluteCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Detective+Marciano+GRANDE"
+                         data-description="J'onn J'onzz (Detective Marciano) imponente con león blanco, simbolizando fuerza y protección.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Detective Marciano" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Detective Marciano</h4>
+                            <p class="text-gray-900 text-sm" id="desc-detective-marciano">J'onn J'onzz (Detective Marciano) imponente con león blanco, simbolizando fuerza y protección.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 2: Flash Absoluto -->
+                    <div id="artwork-flash-absoluto" class="bg-absoluteCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Flash+Absoluto+GRANDE"
+                         data-description="Una imagen estética de Flash corriendo, capturando la esencia de su velocidad y dinamismo.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Flash Absoluto" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Flash Absoluto</h4>
+                            <p class="text-gray-900 text-sm" id="desc-flash-absoluto">Una imagen estética de Flash corriendo, capturando la esencia de su velocidad y dinamismo.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 3: Batman Absoluto -->
+                    <div id="artwork-batman-absoluto" class="bg-absoluteCardBg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Batman+Absoluto+GRANDE"
+                         data-description="Batman acechando a unos ladrones, una representación imponente de su sigilo y justicia.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Batman Absoluto" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Batman: Absoluto</h4>
+                            <p class="text-gray-900 text-sm" id="desc-batman-absoluto">Batman acechando a unos ladrones, una representación imponente de su sigilo y justicia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="obras-puntuales" class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">
+                    Obras Puntuales
+                </h3>
+                <p class="text-lg text-gray-700 mb-6">
+                    Obras individuales que rinden tributo a personajes geek icónicos, a menudo con un giro.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Obra 1: He-Man: Por el Poder de Grayskull -->
+                    <div id="artwork-heman" class="bg-spotlightCard1 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=He-Man+GRANDE"
+                         data-description="He-Man alza su Espada de Poder, listo para defender Eternia.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de He-Man: Por el Poder de Grayskull" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">He-Man: Por el Poder de Grayskull</h4>
+                            <p class="text-gray-900 text-sm" id="desc-heman">He-Man alza su Espada de Poder, listo para defender Eternia.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 2: Goku: El Orgullo del Granjero Saiyajin -->
+                    <div id="artwork-goku-granjero" class="bg-spotlightCard2 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Goku+Granjero+GRANDE"
+                         data-description="Goku, el Saiyajin, orgulloso granjero junto a un tractor, celebrando humildad y trabajo.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Goku: El Orgullo del Granjero Saiyajin" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Goku: El Orgullo del Granjero Saiyajin</h4>
+                            <p class="text-gray-900 text-sm" id="desc-goku-granjero">Goku, el Saiyajin, orgulloso granjero junto a un tractor, celebrando humildad y trabajo.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 3: Galactus: Heraldo del Hambre Cósmica -->
+                    <div id="artwork-galactus" class="bg-spotlightCard3 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Galactus+GRANDE"
+                         data-description="Galactus, Devorador de Mundos, figura cósmica imponente sobre un planeta, reflejando su destino.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Galactus: Heraldo del Hambre Cósmica" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Galactus: Heraldo del Hambre Cósmica</h4>
+                            <p class="text-gray-900 text-sm" id="desc-galactus">Galactus, Devorador de Mundos, figura cósmica imponente sobre un planeta, reflejando su destino.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 4: Mister Condimento: El Sabor del Caos -->
+                    <div id="artwork-mister-condimento" class="bg-spotlightCard4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Mister+Condimento+GRANDE"
+                         data-description="Mister Condimento, villano de Batman, lanza aderezos con sonrisa maniaca, encarnando caos culinario.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Mister Condimento: El Sabor del Caos" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Mister Condimento: El Sabor del Caos</h4>
+                            <p class="text-gray-900 text-sm" id="desc-mister-condimento">Mister Condimento, villano de Batman, lanza aderezos con sonrisa maniaca, encarnando caos culinario.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 5: Homelander: Aplauso a la Oscuridad -->
+                    <div id="artwork-homelander" class="bg-spotlightCard1 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Homelander+GRANDE"
+                         data-description="Homelander, villano de The Boys, aplaudido por crímenes, una representación inquietante.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Homelander: Aplauso a la Oscuridad" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Homelander: Aplauso a la Oscuridad</h4>
+                            <p class="text-gray-900 text-sm" id="desc-homelander">Homelander, villano de The Boys, aplaudido por crímenes, una representación inquietante.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 6: Funny Valentine: El Presidente del Giro -->
+                    <div id="artwork-funny-valentine" class="bg-spotlightCard2 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Funny+Valentine+GRANDE"
+                         data-description="Funny Valentine (JoJo's Bizarre Adventure) con expresión dramática y cabello rubio, evocando su manipulación de la realidad.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Funny Valentine: El Presidente del Giro" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Funny Valentine: El Presidente del Giro</h4>
+                            <p class="text-gray-900 text-sm" id="desc-funny-valentine">Funny Valentine (JoJo's Bizarre Adventure) con expresión dramática y cabello rubio, evocando su manipulación de la realidad.</p>
+                        </div>
+                    </div>
+                    <!-- Obra 7: Don Pollo el Conquistador -->
+                    <div id="artwork-don-pollo" class="bg-spotlightCard3 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-0 hover:z-10 border border-gray-900 overflow-hidden cursor-pointer"
+                         onclick="openArtworkModal(this)"
+                         data-full-src="https://placehold.co/800x1200/B0E0E6/FF9980?text=Don+Pollo+GRANDE"
+                         data-description="Versión única del conquistador de Invencible, rediseñado como Don Pollo, fusionando astucia y humor.">
+                        <div class="bg-artworkImageArea h-80 flex items-center justify-center relative rounded-t-xl">
+                            <img src="https://placehold.co/400x600/B0E0E6/FF9980?text=OBRA" alt="Ilustración de Don Pollo el Conquistador" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Don Pollo el Conquistador</h4>
+                            <p class="text-gray-900 text-sm" id="desc-don-pollo">Versión única del conquistador de Invencible, rediseñado como Don Pollo, fusionando astucia y humor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Sección Contacto - Actualizada con nuevos colores -->
+        <section id="contacto" class="bg-secondary p-8 md:p-12 rounded-xl shadow-lg text-center">
+            <h2 class="text-4xl font-bold text-white mb-8 border-b-2 border-primary pb-4">
+                ✉️ Contacto: Conectemos
+            </h2>
+            <p class="text-lg text-white mb-8 max-w-2xl mx-auto">
+                Para colaboraciones, encargos o simplemente para conectar y hablar sobre arte, puedes contactarme a través de mis redes.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://www.instagram.com/cigalart?igsh=dzc2Mmo1OG9pNDV6" target="_blank" rel="noopener noreferrer" class="bg-accent text-gray-800 px-8 py-4 rounded-full text-lg font-bold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.038 1.475.171 1.952.33 1.295.42 2.126.923 2.918 1.715.79.792 1.293 1.623 1.715 2.919.159.477.292 1.109.33 1.951.046 1.013.048 1.37.048 3.797s-.002 2.784-.048 3.797c-.038.843-.171 1.475-.33 1.952-.42 1.295-.923 2.126-1.715 2.918-.792.79-1.623 1.293-2.919 1.715-.477.159-1.109.292-1.951.33-1.013.046-1.37-.048-3.797-.048s-2.784-.002-3.797-.048c-.843-.038-1.475-.171-1.952-.33-1.295-.42-2.126-.923-2.918-1.715-.79-.792-1.293-1.623-1.715-2.919-.159-.477-.292-1.109-.33-1.951-.046-1.013-.048-1.37-.048-3.797s.002-2.784.048-3.797c.038-.843.171-.1475.33-1.952.42-1.295.923-2.126 1.715-2.918.792-.79.1623-1.293 2.919-1.715.477-.159 1.109-.292 1.951-.33 1.013-.046 1.37-.048 3.797-.048Zm0-2C7.26 0 7.505.001 8.515.047c.78.036 1.37.164 1.83.325 1.08.406 1.75.952 2.41 1.612.66.66 1.206 1.33 1.612 2.41.161.46.289 1.05.325 1.83.046 1.01.047 1.255.047 3.797s-.001 2.784-.047 3.797c-.036.78-.164 1.37-.325 1.83-.406 1.08-.952 1.75-1.612 2.41-.66.66-1.33 1.206-2.41 1.612-.46.161-1.05.289-1.83.325-1.01.046-1.255.047-3.797.047s-2.784-.001-3.797-.047c-.78-.036-1.37-.164-1.83-.325-1.08-.406-1.75-.952-2.41-1.612-.66-.66-1.206-1.33-1.612-2.41-.161-.46-.289-1.05-.325-1.83-.046-1.01-.047-1.255-.047-3.797s.001-2.784.047-3.797c.036-.78.164-1.37.325-1.83.406-1.08.952-1.75 1.612-2.41.66-.66 1.33-1.206 2.41-1.612.46-.161 1.05-.289 1.83-.325C9.505 0 9.75 0 12.315 0Z" clip-rule="evenodd" />
+                        <path d="M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z" />
+                    </svg>
+                    Visita mi Instagram
+                </a>
+                <a href="https://mangaplus-creators.jp/authors/25046300/?fbclid=PAZXh0bgNhZW0CMTEAAaecqC_ducdP0hEIMMxAGKLo8bq6eYLyOOnajYPAFWIioyajQ8rYBcpzM09XsQ_aem_umMj_wy-qd65CV-wcAP3iw" target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-red-400 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.9 2.07c-.42-.08-.85.06-1.12.37l-6.5 7.5-3.5-3.5c-.3-.3-.72-.44-1.14-.37-.42.08-.8.3-.98.67-.18.37-.18.79 0 1.16l4.5 4.5c.3.3.72.44 1.14.37.42-.08.8-.3.98-.67l7.5-8.5c.28-.31.32-.74.12-1.12-.2-.38-.59-.62-1.02-.67zM12 22c-5.52 0-10-4.48-10-10S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm0-2c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8z"/>
+                    </svg>
+                    Mis Cómics en MangaPlus
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 px-6 md:px-12 text-center mt-16 rounded-t-lg">
+        <p>&copy; 2025 Rodrigo Rivera Rodríguez. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Diseñado con pasión y creatividad.</p>
+    </footer>
+
+    <!-- Modal para la visualización de obras en grande -->
+    <div id="artworkModal" class="fixed inset-0 bg-black/80 hidden flex items-center justify-center z-50 p-4" onclick="closeArtworkModal()">
+        <div class="relative w-full h-full flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+            <!-- Botón de cerrar -->
+            <button class="absolute top-4 right-4 text-white hover:text-gray-300 text-5xl font-bold leading-none z-50" onclick="closeArtworkModal()">
+                &times;
+            </button>
+            <!-- Imagen en grande -->
+            <img id="modalArtworkImage" src="" alt="Obra en grande" class="max-w-full max-h-[85vh] object-contain rounded-md shadow-lg">
+            <!-- Descripción de la obra - Posicionada en la parte inferior si es necesario -->
+            <p id="modalArtworkDescription" class="text-white text-xl text-center mt-4 p-2 bg-black/50 rounded-md max-w-3xl"></p>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el modal de la obra
+        function openArtworkModal(element) {
+            const fullSrc = element.getAttribute('data-full-src');
+            const description = element.getAttribute('data-description');
+            
+            const modal = document.getElementById('artworkModal');
+            const modalImage = document.getElementById('modalArtworkImage');
+            const modalDescription = document.getElementById('modalArtworkDescription');
+
+            modalImage.src = fullSrc;
+            modalDescription.textContent = description;
+            modal.classList.remove('hidden');
+            document.body.classList.add('no-scroll'); // Evita el scroll del body
+        }
+
+        // Función para cerrar el modal de la obra
+        function closeArtworkModal() {
+            const modal = document.getElementById('artworkModal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('no-scroll'); // Habilita el scroll del body
+        }
+    </script>
+</body>
+</html>
